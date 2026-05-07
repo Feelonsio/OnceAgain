@@ -1,5 +1,3 @@
-
-
 import pygame
 import asyncio
 
@@ -18,7 +16,6 @@ async def main():
 
         pygame.display.flip()
         clock.tick(60)
-
         await asyncio.sleep(0)
 
 asyncio.run(main())
