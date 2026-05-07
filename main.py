@@ -3,8 +3,16 @@ import asyncio
 
 pygame.init()
 
-screen = pygame.display.set_mode((800, 600))
+WIDTH = 800
+HEIGHT = 600
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
+
+# Wczytanie obrazków
+img1 = pygame.image.load("Ranatin-1.png")
+img2 = pygame.image.load("Ranatin-2.png")
+img3 = pygame.image.load("Ranatin-3.png")
 
 async def main():
     running = True
@@ -16,7 +24,10 @@ async def main():
 
         screen.fill((255, 255, 255))
 
-        pygame.draw.circle(screen, (0, 0, 0), (400, 300), 15)
+        # Zdjêcia jedno pod drugim
+        screen.blit(img1, (100, 50))
+        screen.blit(img2, (100, 300))
+        screen.blit(img3, (100, 550))
 
         pygame.display.flip()
         clock.tick(60)
